@@ -1,1 +1,6 @@
 C:\dev\circuit-builder\Circuitry\Circuitry\bin\Debug\Circuitry.exe.config
+C:\dev\circuit-builder\Circuitry\Circuitry\bin\Debug\Circuitry.exe
+C:\dev\circuit-builder\Circuitry\Circuitry\bin\Debug\Circuitry.pdb
+C:\dev\circuit-builder\Circuitry\Circuitry\obj\Debug\Circuitry.csprojResolveAssemblyReference.cache
+C:\dev\circuit-builder\Circuitry\Circuitry\obj\Debug\Circuitry.exe
+C:\dev\circuit-builder\Circuitry\Circuitry\obj\Debug\Circuitry.pdb
