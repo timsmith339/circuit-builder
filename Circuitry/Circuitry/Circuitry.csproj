@@ -43,12 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circuitry\Gates\NoteGate.cs" />
+    <Compile Include="Circuitry\Gates\XOrGate.cs" />
+    <Compile Include="Circuitry\Gates\OrGate.cs" />
+    <Compile Include="Circuitry\Gates\AndGate.cs" />
+    <Compile Include="Circuitry\ISwitchable.cs" />
+    <Compile Include="Circuitry\Node.cs" />
+    <Compile Include="Circuitry\States.cs" />
+    <Compile Include="Circuitry\StateSwitchedEventArgs.cs" />
+    <Compile Include="Circuitry\Switch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
