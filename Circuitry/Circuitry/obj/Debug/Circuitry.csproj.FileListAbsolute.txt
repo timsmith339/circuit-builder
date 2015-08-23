@@ -1,0 +1,1 @@
+C:\dev\circuit-builder\Circuitry\Circuitry\bin\Debug\Circuitry.exe.config
