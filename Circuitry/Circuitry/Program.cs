@@ -12,32 +12,36 @@ namespace Circuitry
     {
         static void Main(string[] args)
         {
-            var nodeSwitch1 = new Switch();
+            var nSwitch1 = new Switch();
+            var nSwitch2 = new Switch();
+
             var node1 = new Node();
-            var nodeSwitch2 = new Switch();
             var node2 = new Node();
-            var andGate1 = new AndGate();
-            var node3 = new Node();
 
-            Console.WriteLine(node3.State);
+            var xor = new XOrGate();
 
-            node1.SubscribeTo(nodeSwitch1);
-            node2.SubscribeTo(nodeSwitch2);
+            node1.SubscribeTo(nSwitch1);
+            node2.SubscribeTo(nSwitch2);
 
-            andGate1.Input1.SubscribeTo(node1);
-            andGate1.Input2.SubscribeTo(node2);
+            xor.Input1.SubscribeTo(node1);
+            xor.Input2.SubscribeTo(node2);
 
-            node3.SubscribeTo(andGate1);
+            Console.WriteLine("Switch 1: " + nSwitch1.State);
+            Console.WriteLine("Switch 2: " + nSwitch2.State);
 
-            Console.WriteLine(node3.State);
-            nodeSwitch1.SwitchStates();
-            Console.WriteLine(node3.State);
-            nodeSwitch2.SwitchStates();
-            Console.WriteLine(node3.State);
-            nodeSwitch2.SwitchStates();
-            Console.WriteLine(node3.State);
+            while (true)
+            {
+                var key = Console.ReadKey().KeyChar;
+                if (key == '1')
+                    nSwitch1.SwitchStates();
+                else if (key == '2')
+                    nSwitch2.SwitchStates();
 
-            Console.ReadKey();
+                Console.WriteLine("Switch 1: " + nSwitch1.State);
+                Console.WriteLine("Switch 2: " + nSwitch2.State);
+
+                Console.WriteLine();
+            }
         }
     }
 }

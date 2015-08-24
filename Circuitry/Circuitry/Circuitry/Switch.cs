@@ -24,9 +24,7 @@ namespace Circuitry.Circuitry
         public void SwitchStates()
         {
             this.State = (this.State == State.On) ? State.Off : State.On;
-
-            Console.WriteLine("Switch state switched to: " + this.State.ToString());
-
+            
             if (StateSwitched != null)
                 StateSwitched(this, new StateSwitchedEventArgs() { NewState = State });
         }

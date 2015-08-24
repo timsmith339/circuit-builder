@@ -26,6 +26,7 @@ namespace Circuitry.Circuitry.Gates
             this.Input2.StateSwitched += SubscribedStateSwitched;
         }
 
+
         /* Private */
 
         private void EvaluateState()
@@ -33,19 +34,33 @@ namespace Circuitry.Circuitry.Gates
             if (Input1 == null || Input2 == null)
                 return;
 
-            var xor = (this.Input1.State == State.On && this.Input2.State == State.Off) || (this.Input1.State == State.Off && this.Input2.State == State.On);
+            var inputCount = InputOnCount();
 
-            if (xor && this.State == State.Off)
-                SwitchStates();
+            if (this.State == State.Off)
+            {
+                if (inputCount == 1)
+                    SwitchStates();
+            }
+            else
+            {
+                if (inputCount != 1)
+                    SwitchStates();
+            }
+        }
 
-            if ((this.State == State.On) && (this.Input1.State == State.Off && this.Input2.State == State.Off))
-                SwitchStates();
-            
+        private int InputOnCount()
+        {
+            var count = 0;
+            count += (this.Input1.State == State.On) ? 1 : 0;
+            count += (this.Input2.State == State.On) ? 1 : 0;
+            return count;
         }
 
         private void SwitchStates()
         {
             this.State = (this.State == State.On) ? State.Off : State.On;
+
+            Console.WriteLine("XOR Gate is now " + State);
 
             if (StateSwitched != null)
                 StateSwitched(this, new StateSwitchedEventArgs() { NewState = State });

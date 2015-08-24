@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Circuitry\Gates\NoteGate.cs" />
+    <Compile Include="Circuitry\Gates\NotGate.cs" />
     <Compile Include="Circuitry\Gates\XOrGate.cs" />
     <Compile Include="Circuitry\Gates\OrGate.cs" />
     <Compile Include="Circuitry\Gates\AndGate.cs" />
